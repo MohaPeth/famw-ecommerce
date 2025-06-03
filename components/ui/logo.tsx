@@ -1,5 +1,5 @@
-import Image from "next/image"
 import Link from "next/link"
+import Image from "next/image"
 
 interface LogoProps {
   variant?: "default" | "light"
@@ -18,14 +18,16 @@ export function Logo({ variant = "default", size = "md", className = "" }: LogoP
 
   return (
     <Link href="/" className={`hover:opacity-80 transition-opacity duration-300 ${className}`}>
-      <Image
-        src={logoSrc || "/placeholder.svg"}
-        alt="FAMW - For All My Wolves"
-        width={variant === "light" ? 150 : 120}
-        height={variant === "light" ? 100 : 80}
-        className={sizeClasses[size]}
-        priority
-      />
+      <div className="text-center">
+        <Image
+          src={logoSrc || "/placeholder.svg"}
+          alt="FAMW - For All My Wolves"
+          width={variant === "light" ? 150 : 120}
+          height={variant === "light" ? 100 : 80}
+          className={sizeClasses[size]}
+          priority
+        />
+      </div>
     </Link>
   )
 }

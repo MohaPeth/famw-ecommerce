@@ -72,7 +72,7 @@ export default function PanierPage() {
                       <div className="flex gap-6">
                         <div className="relative w-24 h-24 bg-white rounded-lg overflow-hidden flex-shrink-0">
                           <Image
-                            src={item.product.image || "/placeholder.svg"}
+                            src={item.product.image || "/placeholder.svg?height=100&width=100"}
                             alt={item.product.name}
                             fill
                             className="object-contain p-2"

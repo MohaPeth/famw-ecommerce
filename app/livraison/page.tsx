@@ -30,7 +30,7 @@ export default function LivraisonPage() {
                   <span>Prix</span>
                   <span className="font-bold">9,99€</span>
                 </div>
-                <div className="text-green-500 text-sm">✓ Gratuite dès 100€ d'achat</div>
+                <div className="text-green-500 text-sm">✓ Gratuite d��s 100€ d'achat</div>
               </CardContent>
             </Card>
 

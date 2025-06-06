@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { useEffect, useState } from "react"
 import dynamic from "next/dynamic"
 
 import { usePreloader } from "@/hooks/usePreloader"
@@ -16,11 +17,20 @@ interface AppWrapperProps {
 
 export function AppWrapper({ children }: AppWrapperProps) {
   const { isLoading, setIsLoading } = usePreloader(2500)
+  const [isHydrated, setIsHydrated] = useState(false)
+
+  useEffect(() => {
+    setIsHydrated(true)
+  }, [])
+
+  const showContent = isHydrated && !isLoading
 
   return (
     <>
       {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
-      <div className={`transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"}`}>{children}</div>
+      <div className={`transition-opacity duration-500 ${showContent ? "opacity-100" : "opacity-0"}`}>
+        {children}
+      </div>
     </>
   )
 }

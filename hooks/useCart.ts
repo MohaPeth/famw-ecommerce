@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface CartItem {
   productId: number
@@ -11,6 +11,27 @@ interface CartItem {
 
 export function useCart() {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
+  const [isInitialized, setIsInitialized] = useState(false)
+
+  // Charger les données du panier depuis localStorage au démarrage
+  useEffect(() => {
+    const storedCart = localStorage.getItem("famw_cart")
+    if (storedCart) {
+      try {
+        setCartItems(JSON.parse(storedCart))
+      } catch (error) {
+        console.error("Erreur lors du chargement du panier:", error)
+      }
+    }
+    setIsInitialized(true)
+  }, [])
+
+  // Sauvegarder les données du panier dans localStorage à chaque modification
+  useEffect(() => {
+    if (isInitialized) {
+      localStorage.setItem("famw_cart", JSON.stringify(cartItems))
+    }
+  }, [cartItems, isInitialized])
 
   const addToCart = (item: CartItem) => {
     setCartItems((prev) => {

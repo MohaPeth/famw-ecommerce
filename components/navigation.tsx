@@ -34,15 +34,11 @@ export default function Navigation() {
               </Link>
             ))}
             <Link href="/panier">
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all duration-300 font-bold px-6 py-2 uppercase relative"
-              >
+              <Button variant="outline" size="default" className="relative">
                 <ShoppingBag size={16} className="mr-2" />
                 CART
                 {getCartItemsCount() > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
                     {getCartItemsCount()}
                   </span>
                 )}
@@ -53,27 +49,24 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
             <Link href="/panier">
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black p-2 relative"
-              >
+              <Button variant="outline" size="icon" className="relative">
                 <ShoppingBag size={18} />
                 {getCartItemsCount() > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-yellow-500 text-black text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-yellow-500 text-black text-xs rounded-full w-4 h-4 flex items-center justify-center font-bold">
                     {getCartItemsCount()}
                   </span>
                 )}
               </Button>
             </Link>
-            <button
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-famw-cream hover:text-yellow-500 transition-colors duration-300 p-2 focus:outline-none"
               aria-expanded={isOpen}
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            </Button>
           </div>
         </div>
 

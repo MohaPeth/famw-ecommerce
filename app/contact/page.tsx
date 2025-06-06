@@ -101,10 +101,7 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <Button
-                    type="submit"
-                    className="w-full bg-yellow-500 text-black hover:bg-yellow-600 font-bold py-3 transition-all duration-300 hover:scale-105"
-                  >
+                  <Button type="submit" variant="premium" size="lg" className="w-full">
                     ENVOYER
                   </Button>
                 </form>
@@ -154,20 +151,16 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="flex space-x-6">
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-yellow-500 transition-colors duration-300"
-                      aria-label="Instagram"
-                    >
-                      <Instagram size={32} />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-gray-400 hover:text-yellow-500 transition-colors duration-300"
-                      aria-label="Twitter"
-                    >
-                      <Twitter size={32} />
-                    </a>
+                    <Button variant="ghost" size="icon" asChild>
+                      <a href="#" aria-label="Instagram">
+                        <Instagram size={32} />
+                      </a>
+                    </Button>
+                    <Button variant="ghost" size="icon" asChild>
+                      <a href="#" aria-label="Twitter">
+                        <Twitter size={32} />
+                      </a>
+                    </Button>
                   </div>
                   <p className="text-gray-400 mt-4 text-sm">
                     Suivez-nous pour découvrir les coulisses de FAMW et rejoindre notre communauté.

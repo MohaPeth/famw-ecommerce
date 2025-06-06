@@ -1,15 +1,19 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import type { Category } from "@/types"
+import { Button } from "@/components/ui/button";
+import type { Category } from "@/types";
 
 interface CategoryFilterProps {
-  categories: Category[]
-  activeCategory: string
-  onCategoryChange: (categoryId: string) => void
+  categories: Category[];
+  activeCategory: string;
+  onCategoryChange: (categoryId: string) => void;
 }
 
-export function CategoryFilter({ categories, activeCategory, onCategoryChange }: CategoryFilterProps) {
+export function CategoryFilter({
+  categories,
+  activeCategory,
+  onCategoryChange,
+}: CategoryFilterProps) {
   return (
     <div className="flex flex-wrap justify-center gap-3 mb-12">
       {categories.map((category) => (
@@ -55,5 +59,5 @@ export function CategoryFilter({ categories, activeCategory, onCategoryChange }:
         </Button>
       ))}
     </div>
-  )
+  );
 }

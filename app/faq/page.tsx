@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { PageHeader } from "@/components/layout/page-header"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
@@ -144,18 +145,12 @@ export default function FAQPage() {
             <h3 className="text-xl font-bold mb-4">Vous ne trouvez pas votre réponse ?</h3>
             <p className="text-gray-400 mb-6">Notre équipe est là pour vous aider</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:contact@famw.com"
-                className="bg-yellow-500 text-black px-6 py-3 rounded font-bold hover:bg-yellow-600 transition-colors"
-              >
-                Nous contacter
-              </a>
-              <a
-                href="/contact"
-                className="border border-yellow-500 text-yellow-500 px-6 py-3 rounded font-bold hover:bg-yellow-500 hover:text-black transition-colors"
-              >
-                Formulaire de contact
-              </a>
+              <Button asChild variant="premium" size="lg">
+                <a href="mailto:contact@famw.com">Nous contacter</a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <a href="/contact">Formulaire de contact</a>
+              </Button>
             </div>
           </div>
         </div>

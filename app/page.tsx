@@ -22,10 +22,7 @@ export default function HomePage() {
           <SectionHeader title="FEATURED COLLECTION" subtitle="Pour ceux qui ne cherchent pas à appartenir" />
           <ProductGrid products={featuredProducts} />
           <div className="text-center mt-16">
-            <Button
-              asChild
-              className="bg-transparent border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-black font-bold px-12 py-4 text-lg transition-all duration-300"
-            >
+            <Button asChild variant="outline" size="xl">
               <Link href="/produits">VOIR TOUTE LA COLLECTION</Link>
             </Button>
           </div>

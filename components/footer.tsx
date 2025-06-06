@@ -80,6 +80,12 @@ export default function Footer() {
               >
                 Panier
               </Link>
+              <Link
+                href="/checkout"
+                className="block text-gray-400 hover:text-yellow-500 text-sm transition-colors duration-300 uppercase tracking-wide"
+              >
+                Checkout
+              </Link>
             </div>
           </div>
 

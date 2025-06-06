@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Logo } from "@/components/ui/logo"
 
 export function HeroSection() {
   return (
@@ -16,18 +15,15 @@ export function HeroSection() {
       />
       <div className="relative z-20 text-center px-4">
         <div className="text-center">
-        <h1 className="text-famw-cream font-sans text-lg md:text-xl tracking-wider leading-relaxed max-w-2xl mx-auto">
-          Ici, on ne crie pas. On laisse le regard dire ce que les mots taisent.
-        </h1>
-        <p className="mt-6 text-yellow-500 font-serif italic text-xl md:text-2xl tracking-wide">For all my Wolves</p>
-      </div>
+          <h1 className="text-famw-cream font-sans text-lg md:text-xl tracking-wider leading-relaxed max-w-2xl mx-auto">
+            Ici, on ne crie pas. On laisse le regard dire ce que les mots taisent.
+          </h1>
+          <p className="mt-6 text-yellow-500 font-serif italic text-xl md:text-2xl tracking-wide">For all my Wolves</p>
+        </div>
         <p className="text-sm md:text-base mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
           Ce n'est pas une marque qui cherche à parler fort. Elle préfère laisser le silence travailler...
         </p>
-        <Button
-          asChild
-          className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-8 py-3 text-lg transition-all duration-300 hover:scale-105"
-        >
+        <Button asChild variant="premium" size="xl">
           <Link href="/produits">DÉCOUVRIR</Link>
         </Button>
       </div>

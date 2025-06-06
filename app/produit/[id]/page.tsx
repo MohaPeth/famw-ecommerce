@@ -45,6 +45,9 @@ export default function ProductPage() {
       color: selectedColor,
     })
 
+    // Ajouter une alerte pour confirmer l'ajout au panier
+    alert(`${product.name} ajouté au panier !`)
+
     // Reset selections
     setSelectedSize("")
     setSelectedColor("")
